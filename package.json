@@ -1,0 +1,20 @@
+{
+  "name": "foodvillareact",
+  "version": "1.0.0",
+  "description": "Food App",
+  "scripts": {
+    "build": "parcel build index.html",
+    "start": "parcel index.html",
+    "test": "jest"
+  },
+  "author": "khalid",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^18.2.0",
+    "reactdom": "^2.0.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.11.0",
+    "process": "^0.11.10"
+  }
+}
