@@ -75,7 +75,9 @@
   .card:hover {
     transform: scale(0.9); /* Increase size by 10% */
 }
-
+a{
+  text-decoration: none;
+}
   
   .card img {
     width: 100%;
@@ -119,13 +121,16 @@
   flex-wrap: wrap;
   gap: 25px;
   justify-content: center;
+  border-radius: 8px;
 }
 .shimmer-card {
-  flex-basis: 250px;
+  width: 200px;
+  height: 350px;
   padding: 10px;
   margin-bottom: 10px;
   border-color: #d3d5df;
   box-shadow: 0 4px 7px 0 rgb(218 220 230 / 60%);
+  border-radius: 8px;
 }
 .shimmer-title {
   width: 60%;
@@ -140,8 +145,8 @@
   margin-top: 18px;
 }
 .shimmer-container .shimmer-img {
-  height: 144px;
-  width: 230px;
+  height: 174px;
+  width: 200px;
 }
 
 /*Animation to Shimmer Component Cards */
@@ -172,4 +177,56 @@
   border-radius: 8px;
   cursor: pointer;
   
+}
+.restaurant-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+}
+
+.restaurant-info {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.restaurant-info h1 {
+  font-size: 24px;
+}
+
+.restaurant-info h2 {
+  font-size: 20px;
+}
+
+.restaurant-info img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.menu-container {
+  margin-top: 40px;
+}
+
+.menu-container h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.menu-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.menu-item {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #fff;
+}
+
+.menu-item:hover {
+  background-color: #f0f0f0;
 }

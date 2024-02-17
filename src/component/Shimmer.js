@@ -12,10 +12,20 @@ const CardShimmer = () => {
   );
 };
 
-const Shimmer = () => {
+// const Shimmer1 = () => {
+//   return (
+//     <div className="shimmer-container">
+//       {new Array(shimmer_card_unit).fill(0).map((element, index) => {
+//         return <CardShimmer key={index} />;
+//       })}
+//     </div>
+//   );
+// };
+
+const Shimmer =() => {
   return (
     <div className="shimmer-container">
-      {new Array(shimmer_card_unit).fill(0).map((element, index) => {
+      {Array(shimmer_card_unit).fill(0).map((element,index)=>{
         return <CardShimmer key={index} />;
       })}
     </div>
