@@ -22,8 +22,8 @@ async function getRestaurantInfo() {
     "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.96340&lng=77.58550&restaurantId="+resId+"&catalog_qa=undefined&submitAction=ENTER"
     );
  const json = await data.json();
- //console.log(json?.data?.cards[2].groupedCard.cardGroupMap.REGULAR);
- setRestaurantMen(json?.data?.cards[0]?.card?.card?.info);
+//  console.log(json?.data?.cards[4]);
+ setRestaurantMen(json?.data?.cards[2]?.card?.card?.info);
  setMenuItems(json?.data?.cards.find(x=> x.groupedCard)?.
     groupedCard?.cardGroupMap?.REGULAR?.
     cards?.map(x => x.card?.card)?.

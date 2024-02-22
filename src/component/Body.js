@@ -109,13 +109,8 @@ import { RestuarantCard } from "./RestaurantCards";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import {Link} from "react-router-dom"
-
-function filterData(srchTxt, restaurant) {
-  const filteredData = restaurant.filter((restaurants) =>
-    restaurants?.info?.name.toLowerCase().includes(srchTxt.toLowerCase())
-  );
-  return filteredData;
-}
+import { filterData } from "../utilities/helper";
+import useOnline from "../utilities/useOnline";
 
 const Body = () => {
   const [allRestaurant, setAllRestaurants] = useState([]);
@@ -127,6 +122,10 @@ const Body = () => {
   useEffect(() => {
     getRestaurant();
   }, []);
+  const isOnline = useOnline();
+  if (isOnline) {
+    return <h1>Yor are offline</h1>
+  }
 
   async function getRestaurant() {
     try {
@@ -151,22 +150,28 @@ const Body = () => {
       setLoading(false);
     }
   }
-
+  
+  
+  // online= false;
+  // if (online){
+  //   return <h1>Yor are Offline</h1>
+  // }
+  
   if (loading) {
     return <Shimmer />;
   }
 
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
+  // if (error) {
+  //   return <div>Error: {error}</div>;
+  // }
 
   if (!allRestaurant) {
     return null;
   }
 
-  if (filteredRestaurant?.length === 0) {
-    return <h1>No filtered restaurant matched</h1>;
-  }
+  // if (filteredRestaurant?.length === 0) {
+  //   return <h1>No filtered restaurant matched</h1>;
+  // }
 
   return (
     <>

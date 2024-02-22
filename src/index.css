@@ -178,6 +178,14 @@ a{
   cursor: pointer;
   
 }
+.goback-btn{
+  background-color: #080101;
+  color: rgb(231, 220, 220);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
 .restaurant-container {
   max-width: 800px;
   margin: 0 auto;
