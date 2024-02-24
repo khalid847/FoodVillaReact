@@ -1,3 +1,10 @@
+import { useContext } from "react";
+import UserContext from "../utilities/UserContext";
+
+
 export const Footer = () => {
-    return(<h4>Footer</h4>)
+    const {user} = useContext(UserContext);
+    return(
+    <h4>This Website is Developed by {user.name} and mail id {user.email}</h4>
+    )
 };

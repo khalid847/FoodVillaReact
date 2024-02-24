@@ -1,4 +1,4 @@
-import React, {lazy, Suspense} from 'react';
+import React, {lazy, Suspense, useState} from 'react';
 import ReactDOM  from 'react-dom/client';
 import Headers from './component/Header';
 import Body from './component/Body';
@@ -12,6 +12,10 @@ import Restaurants from './component/Restaurants';
 import Profile from './component/Profile';
 import Login from './component/Login';
 import Shimmer from './component/Shimmer';
+import UserContext from './utilities/UserContext';
+import { Provider } from 'react-redux';
+import store from './utilities/store';
+import Cart from './component/Cart';
 //import Shimmer from './component/Shimmer';
 //import Instamart from './component/Instamart';
 
@@ -49,12 +53,20 @@ const Instamart = lazy(()=>import('./component/Instamart'));
 
 
 const Component = () => {
+    const [user, setUser]=useState(
+      {
+        name: "Khalid Saifullah",
+        email: "khalid@gmail.com"
+      }  
+    );
     return (
-            <>
-            <Headers/>
-            <Outlet/>
-            <Footer/>
-            </>
+            <Provider store={store}>
+                <UserContext.Provider value={{user:user,setUser:setUser,}}>
+                <Headers/>
+                <Outlet/>
+                <Footer/>
+                </UserContext.Provider>
+            </Provider>
             
     );
 };
@@ -92,6 +104,10 @@ const appRouter = createBrowserRouter([
         element:<Suspense fallback={<Shimmer/>}>
             <Instamart/>
             </Suspense>,
+       },
+       {
+        path: '/cart',
+        element:<Cart/>
        }
     ]
 },
